@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>API Explorer | Cognifyz Task 5</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Header -->
+        <header class="hero">
+
+            <div class="badge">
+                ⚡ Cognifyz Task 5
+            </div>
+
+            <h1>
+                API Explorer
+                <span>Dashboard</span>
+            </h1>
+
+            <p>
+                Explore dynamic content fetched from a public API
+                using JavaScript Fetch API.
+            </p>
+
+        </header>
+
+
+        <!-- Control Panel -->
+        <section class="control-panel">
+
+            <div class="search-box">
+
+                <span>🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search posts by title..."
+                >
+
+            </div>
+
+            <button id="refreshBtn" class="refresh-btn">
+                ↻ Refresh
+            </button>
+
+        </section>
+
+
+        <!-- API Status -->
+        <section class="status-card">
+
+            <div class="status-left">
+
+                <span id="statusDot" class="status-dot"></span>
+
+                <div>
+                    <strong id="statusText">
+                        Connecting to API...
+                    </strong>
+
+                    <small>
+                        JSONPlaceholder API
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="api-url">
+                GET /posts
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>📦</span>
+                <div>
+                    <small>Total Posts</small>
+                    <strong id="totalPosts">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>🔎</span>
+                <div>
+                    <small>Showing</small>
+                    <strong id="visiblePosts">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span>👤</span>
+                <div>
+                    <small>Users</small>
+                    <strong id="totalUsers">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Loading -->
+        <section id="loading" class="loading">
+
+            <div class="spinner"></div>
+
+            <p>Fetching data from API...</p>
+
+        </section>
+
+
+        <!-- Error -->
+        <section id="errorBox" class="error-box hidden">
+
+            <div class="error-icon">
+                ⚠️
+            </div>
+
+            <div>
+                <h3>Unable to fetch data</h3>
+
+                <p id="errorMessage">
+                    Something went wrong.
+                </p>
+            </div>
+
+            <button id="retryBtn">
+                Retry
+            </button>
+
+        </section>
+
+
+        <!-- Posts -->
+        <section>
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Latest Posts</h2>
+
+                    <p>
+                        Dynamically loaded from JSONPlaceholder
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="postsContainer" class="posts-grid"></div>
+
+            <div id="noResults" class="no-results hidden">
+
+                <div>🔍</div>
+
+                <h3>No posts found</h3>
+
+                <p>
+                    Try searching with a different keyword.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                Built with ❤️ using HTML, CSS & JavaScript
+            </p>
+
+            <span>
+                Cognifyz Technologies • Task 5
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Post Details Modal -->
+    <div id="modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="close-btn">
+                ×
+            </button>
+
+            <span class="modal-label">
+                POST DETAILS
+            </span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalBody"></p>
+
+            <div class="modal-user">
+                👤 User ID:
+                <strong id="modalUser"></strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
